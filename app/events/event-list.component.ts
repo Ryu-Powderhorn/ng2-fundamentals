@@ -2,18 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'events-list',
+    styles:[``],
     template: `
     <div>
       <h1> Upcoming ng x events ! ! ! </h1>
       <hr />
-      <event-thumbnail #thumbnail
+      <div class="well"><div>CSS ENCAPSULATED - TEXT NOT RED! <br/>
+      (though it matches the child component's css selector)<br/>
+      Move the 'styles' element to this component metadata to affect only this componenet's text in .well classe's!
+      </div>
+      </div>
+      <event-thumbnail
       [event]="event1"></event-thumbnail>
-      <h3>{{thumbnail.testTemplateProperty}}</h3>
-      <button class="btn btn-primary" (click)="thumbnail.logTemplateDemo()">Log that template data, Jethroe!</button>
     </div>
     `
-      //@output module2-demo
-      //(childButtonClickHandler)="handleEventFromClicker($event)" 
 })
 
 export class EventsListComponent  {
@@ -33,8 +35,4 @@ export class EventsListComponent  {
         }
     }
 
-    // @output module2-ddemo
-    // handleEventFromClicker(event_data_from_child) {
-    //     console.log('Clicked an event handler! It said: ', event_data_from_child)
-    // }
 }
