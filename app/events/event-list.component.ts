@@ -7,11 +7,6 @@ import { Component, OnInit } from '@angular/core';
     <div>
       <h1> Upcoming ng x events ! ! ! </h1>
       <hr />
-      <div class="well"><div>CSS ENCAPSULATED - TEXT NOT RED! <br/>
-      (though it matches the child component's css selector)<br/>
-      Move the 'styles' element to this component metadata to affect only this componenet's text in .well classe's!
-      </div>
-      </div>
       <event-thumbnail
       [event]="event1"></event-thumbnail>
     </div>

@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     selector: 'event-thumbnail',
     styles: [`
     .pad-left { margin-left: 10px ;}
-    .well div { color: red;}
+    .well div { color: #bbb;}
     `],
     template: `
     <div class="hoverwell well thumbnail">
