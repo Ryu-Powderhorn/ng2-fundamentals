@@ -6,7 +6,7 @@ import { EventThumbnailComponent } from "./events/event-thumbnail.component";
 import { NavBarComponent } from "./nav/navbar.component";
 import { Router, RouterModule } from "@angular/router";
 
-// Services
+// Common Services
 import { EventService } from "./events/shared/event.service";
 import { ToastrService } from "./common/toastr.service";
 import { EventDetailsComponent } from "./events/event-details/event-details.component";
@@ -15,6 +15,9 @@ import { EventDetailsComponent } from "./events/event-details/event-details.comp
 import { appRoutes } from "./routes";
 import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./errors/404.component";
+import { EventRouteActivator } from "./events/event-details/event-route-activator.service";
+
+
 
 @NgModule({
     imports: [
@@ -30,7 +33,7 @@ import { Error404Component } from "./errors/404.component";
         NavBarComponent,
         Error404Component
     ],
-    providers: [EventService, ToastrService],
+    providers: [EventService, ToastrService, EventRouteActivator],
     bootstrap: [EventsAppComponent]
 })
 export class AppModule {}
