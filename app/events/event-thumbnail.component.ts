@@ -7,15 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
     .well div { color: #bbb;}
     `],
     template: `
-    <div class="hoverwell well thumbnail">
-        <h2>{{event.name}}</h2>
-        <div>Date: {{event.date}}</div>
-        <div>Time: {{event.time}}</div>
-        <div>Price: \${{event.price}}</div>
+    <div [routerLink]="['/events', event.id]" class="hoverwell well thumbnail">
+        <h2>{{event?.name}}</h2>
+        <div>Date: {{event?.date}}</div>
+        <div>Time: {{event?.time}}</div>
+        <div>Price: \${{event?.price}}</div>
         <div>
-            <span>Location: {{event.location.address}}</span>
+            <span>Location: {{event?.location?.address}}</span>
            
-            <span class="pad-left">{{event.location.city}}, {{event.location.country}}</span>
+            <span class="pad-left">{{event?.location?.city}}, {{event.location.country}}</span>
         </div>
     </div>
     `

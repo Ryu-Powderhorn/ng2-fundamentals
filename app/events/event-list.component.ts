@@ -28,8 +28,8 @@ export class EventsListComponent  implements OnInit{
     }
 
     handleThumbnailClick(eventName) {
-        // @TODO: failling
-        this.toastr.error(eventName);
+        // @TODO: fix failling toast - (wrapping external libraries as services)
+        // this.toastr.error(eventName);
         console.log(eventName);
 
     }
