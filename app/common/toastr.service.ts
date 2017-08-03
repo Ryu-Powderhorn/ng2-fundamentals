@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 declare let toastr:any;
 
+//@TODO: fix this.. : 
 @Injectable()
 export class ToastrService {
 
