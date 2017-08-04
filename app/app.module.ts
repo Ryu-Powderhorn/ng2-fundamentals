@@ -31,9 +31,23 @@ import { EventRouteActivator } from "./events/event-details/event-route-activato
         EventDetailsComponent,
         CreateEventComponent, 
         NavBarComponent,
-        Error404Component
+        Error404Component,
     ],
-    providers: [EventService, ToastrService, EventRouteActivator],
+    providers: [EventService,
+         ToastrService,
+         EventRouteActivator,
+         // RouteGuard Function
+         { 
+            provide: 'canDeactivateCreateEvent', 
+            useValue: checkDirtyState 
+        }
+    ],
     bootstrap: [EventsAppComponent]
 })
 export class AppModule {}
+
+function checkDirtyState(comp: CreateEventComponent) {
+    if (comp.isDirty)
+        return window.confirm('You didn\'t actually save that. You sure, hon?')
+    return true
+}

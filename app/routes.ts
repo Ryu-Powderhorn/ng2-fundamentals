@@ -10,7 +10,7 @@ export const appRoutes:Routes = [
     // view all
     { path: 'events', component: EventsListComponent},
     // create new event
-    { path: 'events/new', component: CreateEventComponent},
+    { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
     
     
     // view one detail by path param - @TODO: figure out how to mark comments as important and also this is important -
