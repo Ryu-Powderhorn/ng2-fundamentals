@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from "./shared/event.service";
 import { ToastrService } from "../common/toastr.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     styles:[ ``],
@@ -9,8 +10,7 @@ import { ToastrService } from "../common/toastr.service";
       <h1> Upcoming ng x events ! ! ! </h1>
       <hr />
       <div *ngFor="let event of events">
-        <event-thumbnail 
-        (click)="handleThumbnailClick(event.name)" [event]="event" ></event-thumbnail>
+        <event-thumbnail (click)="handleThumbnailClick(event.name)" [event]="event"></event-thumbnail>
       </div>
     </div>
     `
@@ -18,13 +18,14 @@ import { ToastrService } from "../common/toastr.service";
 
 export class EventsListComponent  implements OnInit{
     
-    events:any[]
+    events:any
     
-    constructor(private eventService: EventService, private toastr: ToastrService) { 
+    constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) { 
+
     }
 
     ngOnInit() {
-        this.events = this.eventService.getAllEvents()
+        this.events = this.route.snapshot.data['events'];
     }
 
     handleThumbnailClick(eventName) {

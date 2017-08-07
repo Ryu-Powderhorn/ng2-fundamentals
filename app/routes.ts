@@ -4,11 +4,13 @@ import { EventDetailsComponent } from "./events/event-details/event-details.comp
 import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./errors/404.component";
 import { EventRouteActivator } from "./events/event-details/event-route-activator.service";
+import { EventListResolver } from "./events/events-list-resolver.service";
 
 export const appRoutes:Routes = [
 
-    // view all
-    { path: 'events', component: EventsListComponent},
+    // View All Events
+    // EventListResolver used here for 'pre-loading' content before rendering route
+    { path: 'events', component: EventsListComponent, resolve: {events: EventListResolver}},
     // create new event
     { path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']},
     
