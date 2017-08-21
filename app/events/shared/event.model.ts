@@ -5,10 +5,10 @@ export interface IEvent {
     time: string
     price: number
     imageUrl: string
-    locatin?: {
+    location?: {
         address: string
         city: string
-        county: string
+        country: string
     },
     onilneUrl?: string,
     sessions: ISession[]
@@ -18,8 +18,8 @@ export interface IEvent {
 export interface ISession {
     id: number
     name: string
-    presenter: string    
-    duratin: number
+    presenter: string
+    duration: number
     level: string
     abstract: string 
     voters: string[]
