@@ -18,7 +18,7 @@ export const appRoutes:Routes = [
     // view one detail by path param - @TODO: figure out how to mark comments as important and also this is important -
     // ':id' style route-param routes should be last in your routing file so Angular doesn't jump on the first match it sees (new) and
     // move on
-    { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator]},
+    { path: 'events/:id',  component: EventDetailsComponent, canActivate: [EventRouteActivator]},
     
     // Errors and defaults
 
@@ -27,6 +27,8 @@ export const appRoutes:Routes = [
 
     // (prefix and full are the options here - prefix is a %like for the beginning of a path)
     { path: '', redirectTo: '/events', pathMatch: 'full'},
-       
+    
+    // lazyloading modules
+    { path: 'user', loadChildren: 'app/user/user.module#UserModule'}       
 
 ]

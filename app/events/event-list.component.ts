@@ -16,7 +16,7 @@ import { ActivatedRoute } from "@angular/router";
     `
 })
 
-export class EventsListComponent  implements OnInit{
+export class EventsListComponent  implements OnInit{ 
     
     events:any
     
