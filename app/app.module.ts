@@ -21,6 +21,7 @@ import { appRoutes } from "./routes";
 
 // Errors
 import { Error404Component } from "./errors/404.component";
+import { AuthService } from "./user/auth.service";
 
 
 
@@ -38,9 +39,11 @@ import { Error404Component } from "./errors/404.component";
         NavBarComponent,
         Error404Component,
     ],
-    providers: [EventService,
+    providers: [
+         EventService,
          ToastrService,
          EventRouteActivator,
+         AuthService,
          // RouteGuard Function
          { 
             provide: 'canDeactivateCreateEvent', 
