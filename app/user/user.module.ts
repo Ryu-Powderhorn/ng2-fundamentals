@@ -17,7 +17,6 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'
     declarations: [
         ProfileComponent,
         LoginComponent,
-        
     ],
     providers: [],
 })

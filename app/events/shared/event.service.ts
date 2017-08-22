@@ -10,7 +10,7 @@ export class EventService {
     getAllEvents(): Observable <IEvent[]>{
         let subject = new Subject<IEvent[]>()
         setTimeout(() => {subject.next(EVENTS); subject.complete();},
-          1000);
+          500);
         
          return subject;    
     }

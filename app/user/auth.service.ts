@@ -3,12 +3,12 @@ import { IUser } from "./user.model";
 
 @Injectable()
 export class AuthService {
-
+    
     currentUser: IUser
-
-
+    
+    
     constructor() { }
-
+    
     loginUser(userName: string, password: string) {
         this.currentUser = {
             id: 1,
@@ -18,6 +18,11 @@ export class AuthService {
         }      
     }
 
+    updateCurrentUser(firstname: string, lastName: string) {
+        this.currentUser.firstName = firstname
+        this.currentUser.lastName = lastName
+    }
+    
     isAuthenticated() {
         return !!this.currentUser;
     }
