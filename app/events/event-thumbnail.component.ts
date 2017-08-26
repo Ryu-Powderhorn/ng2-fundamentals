@@ -7,7 +7,7 @@ import { IEvent } from "./index";
     .pad-left { margin-left: 10px ;}
     .well div { color: #bbb;}
     `],
-    template: `
+    template:`
     <div [routerLink]="['/events', event.id]" class="hoverwell well thumbnail">
         <h2>{{event?.name}}</h2>
         <div>Date: {{event?.date}}</div>

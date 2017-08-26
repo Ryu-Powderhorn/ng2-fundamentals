@@ -3,6 +3,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { EventsAppComponent } from "./events-app.component";
 import { NavBarComponent } from "./nav/navbar.component";
 import { Router, RouterModule } from "@angular/router";
+import { FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 // Events
 import {
@@ -28,6 +29,8 @@ import { AuthService } from "./user/auth.service";
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule, 
+        ReactiveFormsModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
