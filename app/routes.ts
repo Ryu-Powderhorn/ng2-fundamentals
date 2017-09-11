@@ -5,6 +5,7 @@ import { CreateEventComponent } from "./events/create-event.component";
 import { Error404Component } from "./errors/404.component";
 import { EventRouteActivator } from "./events/event-details/event-route-activator.service";
 import { EventListResolver } from "./events/events-list-resolver.service";
+import { CreateSessionComponent } from "./events/index";
 
 export const appRoutes:Routes = [
 
@@ -19,6 +20,8 @@ export const appRoutes:Routes = [
     // ':id' style route-param routes should be last in your routing file so Angular doesn't jump on the first match it sees (new) and
     // move on
     { path: 'events/:id',  component: EventDetailsComponent, canActivate: [EventRouteActivator]},
+    
+    { path: 'events/session/new', component: CreateSessionComponent },
     
     // Errors and defaults
 

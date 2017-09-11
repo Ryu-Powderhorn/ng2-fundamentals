@@ -13,7 +13,8 @@ import {
     EventDetailsComponent,
     EventRouteActivator,
     CreateEventComponent,
-    EventListResolver
+    EventListResolver,
+    CreateSessionComponent
 } from './events/index'
 
 import { ToastrService } from "./common/toastr.service";
@@ -34,6 +35,7 @@ import { AuthService } from "./user/auth.service";
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
+        CreateSessionComponent,
         EventsAppComponent, 
         EventsListComponent, 
         EventThumbnailComponent,
